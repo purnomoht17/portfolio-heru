@@ -1,0 +1,22 @@
+.
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   └── vite.svg
+├── src
+│   ├── assets
+│   │   ├── profile.png
+│   │   └── react.svg
+│   ├── components
+│   │   ├── Footer.jsx
+│   │   └── Navbar.jsx
+│   ├── main.jsx
+│   └── pages
+│       └── Home
+├── struktur.txt
+└── vite.config.js
+
+7 directories, 13 files
