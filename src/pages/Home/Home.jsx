@@ -27,7 +27,7 @@ function Home() {
                   {/* Tombol Resume: Menggunakan atribut 'download' agar langsung mengunduh file */}
                   <a 
                     className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" 
-                    href="/resume.pdf" 
+                    href="/Heru_Purnomo_Resume.pdf" 
                     download="Heru_Purnomo_Resume.pdf" // 💡 Tambahkan atribut download
                   >
                     Resume

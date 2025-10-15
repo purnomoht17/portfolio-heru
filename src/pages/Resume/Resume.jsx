@@ -23,7 +23,7 @@ function Resume() {
                 {/* Tombol Resume: Menggunakan href="/resume.pdf" dan atribut download */}
                 <a 
                   className="btn btn-primary px-4 py-3 mb-3 mb-md-0" 
-                  href="/resume.pdf" // 💡 Targetkan file di folder public
+                  href="/Heru_Purnomo_Resume.pdf" // 💡 Targetkan file di folder public
                   download="Heru_Purnomo_Resume.pdf" // 💡 Tambahkan atribut download agar langsung mengunduh
                 >
                   <div className="d-inline-block bi bi-download me-2"></div>
