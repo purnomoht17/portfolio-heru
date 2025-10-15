@@ -1,6 +1,7 @@
 // src/pages/Home/Home.jsx
 
 import React from 'react';
+import { Link } from 'react-router-dom'; // 💡 Tambahkan impor Link
 import './Home.css';
 import profileImage from '../../assets/profile.png';
 
@@ -22,20 +23,23 @@ function Home() {
                   <span className="text-gradient d-inline">Belajar & Berkarya di Dunia Teknologi</span>
                 </h1>
                 <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                  
+                  {/* Tombol Resume: Menggunakan atribut 'download' agar langsung mengunduh file */}
                   <a 
                     className="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" 
                     href="/resume.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
+                    download="Heru_Purnomo_Resume.pdf" // 💡 Tambahkan atribut download
                   >
                     Resume
                   </a>
-                  <a 
+                  
+                  {/* 💡 Perbaikan: Menggunakan Link component untuk navigasi internal */}
+                  <Link 
                     className="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" 
-                    href="#projects"
+                    to="/projects"
                   >
                     Projects
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -74,13 +78,13 @@ function Home() {
 </p>
 
                 <div className="d-flex justify-content-center fs-2 gap-4">
-                  <a className="text-gradient" href="https://instagram.com/heru_purnomo17">
+                  <a className="text-gradient" href="https://instagram.com/heru_purnomo17" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-instagram"></i>
                   </a>
-                  <a className="text-gradient" href="https://linkedin.com/">
+                  <a className="text-gradient" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-linkedin"></i>
                   </a>
-                  <a className="text-gradient" href="https://github.com/">
+                  <a className="text-gradient" href="https://github.com/" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-github"></i>
                   </a>
                 </div>

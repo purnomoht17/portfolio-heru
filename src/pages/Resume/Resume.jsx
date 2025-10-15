@@ -15,22 +15,22 @@ function Resume() {
             
             {/* Experience Section */}
             <section>
-              {/* 💡 Perbaikan: Menggunakan flex-column (mobile) dan flex-md-row (desktop) */}
-              {/* Urutan elemen di JSX diubah: Tombol dulu, baru Judul */}
+              {/* Menggunakan flex-column (mobile) dan flex-md-row (desktop) untuk urutan: Tombol di atas Experience pada HP */}
               <div 
                 className="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-md-between mb-4"
               >
                 
-                {/* Tombol Resume (Akan muncul di atas pada mobile) */}
+                {/* Tombol Resume: Menggunakan href="/resume.pdf" dan atribut download */}
                 <a 
-                  className="btn btn-primary px-4 py-3 mb-3 mb-md-0" // Tambahkan mb-3 untuk jarak di mobile, mb-md-0 untuk menghapus di desktop
-                  href="#!" 
+                  className="btn btn-primary px-4 py-3 mb-3 mb-md-0" 
+                  href="/resume.pdf" // 💡 Targetkan file di folder public
+                  download="Heru_Purnomo_Resume.pdf" // 💡 Tambahkan atribut download agar langsung mengunduh
                 >
                   <div className="d-inline-block bi bi-download me-2"></div>
                   Download Resume
                 </a>
                 
-                {/* Judul Experience (Akan muncul di bawah pada mobile) */}
+                {/* Judul Experience */}
                 <h2 className="text-primary fw-bolder mb-0">Experience</h2>
               </div>
               
@@ -56,8 +56,7 @@ function Resume() {
               
             </section>
 
-
-            {/* Education Section (Tetap sama) */}
+            {/* Education Section */}
             <section>
               <h2 className="text-secondary fw-bolder mb-4">Education</h2>
               {resumeData.education.map((edu) => (
@@ -86,7 +85,7 @@ function Resume() {
             
             <div className="pb-5"></div>
 
-            {/* --- BAGIAN YANG DIPERBAIKI --- */}
+            {/* Skills Section */}
             <section>
               <div className="card shadow border-0 rounded-4 mb-5">
                 <div className="card-body p-5">
@@ -109,7 +108,7 @@ function Resume() {
                   <div className="mb-0">
                     <div className="d-flex align-items-center mb-4">
                       <div className="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i className="bi bi-code-slash"></i></div>
-                      <h3 className="fw-bolder mb-0"><span className="text-gradient d-inline">Languages</span></h3>
+                      <h3 className="fw-bolder mb-0"><span className="text-gradient d-inline">Technique Skills</span></h3>
                     </div>
                      {/* Menggunakan satu .map() dengan kelas g-4 untuk jarak otomatis */}
                     <div className="row row-cols-1 row-cols-md-3 g-4">

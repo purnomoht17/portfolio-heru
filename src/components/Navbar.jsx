@@ -7,7 +7,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-light bg-white py-3">
       <div className="container px-5">
         <Link className="navbar-brand" to="/"> {/* Ganti href menjadi to */}
-          <span className="fw-bolder text-primary">My Portfolio - Heru Purnomo</span>
+          <span className="fw-bolder text-primary">Heru Purnomo</span>
         </Link>
         <button
           className="navbar-toggler"
