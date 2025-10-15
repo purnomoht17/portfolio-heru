@@ -1,5 +1,4 @@
 import React from 'react';
-import './Resume.css';
 import { resumeData } from '../../data/resumeData.js'; // Impor data dari file terpisah
 
 function Resume() {

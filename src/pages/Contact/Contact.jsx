@@ -1,5 +1,4 @@
 import React from 'react';
-import './Contact.css';
 
 function Contact() {
   const whatsappNumber = '6285212829415'; // Ganti dengan nomor WhatsApp Anda

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Projects.css';
+import { Link } from 'react-router-dom';
 import { projectsData } from '../../data/projectData.js'; // <-- Ubah sumber impor ke file baru
 
 function Projects() {
@@ -17,19 +17,53 @@ function Projects() {
             <div className="col-lg-11 col-xl-9 col-xxl-8">
               
               {/* Mapping dari projectsData */}
-              {projectsData.map((project) => ( // <-- Gunakan projectsData
-                <div key={project.id} className="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                  <div className="card-body p-0">
-                    <div className="d-flex align-items-center">
-                      <div className="p-5">
-                        <h2 className="fw-bolder">{project.title}</h2>
-                        <p>{project.description}</p>
+              {projectsData.map((project, index) => {
+                // Tentukan urutan: jika index genap (0, 2, ...), gambar di kanan (order-md-2)
+                // jika index ganjil (1, 3, ...), gambar di kiri (order-md-1)
+                const isOdd = index % 2 !== 0; 
+
+                // Untuk mobile (default), urutan adalah 1 (Gambar) lalu 2 (Teks)
+                // Untuk desktop (md), atur urutan bergantian
+                const imageOrderLg = isOdd ? 'order-lg-1' : 'order-lg-2';
+                const textOrderLg = isOdd ? 'order-lg-2' : 'order-lg-1';
+
+                return (
+                  <div key={project.id} className="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                    <div className="card-body p-0">
+                      
+                      {/* START: Perubahan Layout Grid */}
+                      <div className="row gx-0">
+                        
+                        {/* Kolom Keterangan Teks (Selalu di bawah di mobile/default) */}
+                        <div className={`col-lg-7 p-4 p-md-5 ${textOrderLg}`}>
+                            <h2 className="fw-bolder">{project.title}</h2>
+                            <p>{project.description}</p>
+                            {/* Tambahkan Link atau Tombol jika ada */}
+                            {project.link && (
+                                <Link className="btn btn-primary mt-3" to={project.link}>Lihat Proyek</Link>
+                            )}
+                        </div>
+
+                        {/* Kolom Gambar (Selalu di atas di mobile/default) */}
+                        <div className={`col-lg-5 d-flex align-items-center ${imageOrderLg}`}>
+                            <div className="p-0 bg-dark w-100 h-100">
+                                {/* Ganti img-fluid dengan class yang memastikan gambar mengisi kolom */}
+                                <img 
+                                    className="img-fluid w-100 h-100 object-fit-cover" // Tambahkan w-100 h-100 dan object-fit-cover (jika didukung)
+                                    src={project.imageUrl} 
+                                    alt={project.title} 
+                                />
+                            </div>
+                        </div>
+
                       </div>
-                      <img className="img-fluid" src={project.imageUrl} alt={project.title} />
+                      {/* END: Perubahan Layout Grid */}
+
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
+              {/* End Mapping */}
 
             </div>
           </div>
@@ -41,7 +75,7 @@ function Projects() {
         <div className="container px-5 my-5">
           <div className="text-center">
             <h2 className="display-4 fw-bolder mb-4">Let's build something together</h2>
-            <a className="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="/contact">Contact me</a>
+            <Link className="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" to="/contact">Contact me</Link>
           </div>
         </div>
       </section>

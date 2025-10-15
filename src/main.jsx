@@ -16,6 +16,7 @@ import Contact from './pages/Contact/Contact.jsx'; // <-- TAMBAHKAN INI
 // Impor CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './pages/Home/Home.css';
 
 // Komponen Layout (tetap sama)
