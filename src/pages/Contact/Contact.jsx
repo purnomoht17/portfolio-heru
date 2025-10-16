@@ -1,10 +1,10 @@
 import React from 'react';
 
 function Contact() {
-  const whatsappNumber = '6285212829415'; // Ganti dengan nomor WhatsApp Anda
-  const instagramUsername = 'heru_purnomo17'; // Ganti dengan username Instagram Anda
-  const emailAddress = 'purnomoht17@gmail.com'; // Ganti dengan alamat email Anda
-  const linkedinUsername = 'heru-purnomo17'; // Ganti dengan username LinkedIn Anda
+  const whatsappNumber = '6285212829415';
+  const instagramUsername = 'hrpurnomo_'; 
+  const emailAddress = 'purnomoht17@gmail.com'; 
+  const linkedinUsername = 'heru-purnomo17';
 
   return (
     <main className="flex-shrink-0">
