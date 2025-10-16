@@ -80,13 +80,13 @@ function Home() {
 </p>
 
                 <div className="d-flex justify-content-center fs-2 gap-4">
-                  <a className="text-gradient" href="https://instagram.com/heru_purnomo17" target="_blank" rel="noopener noreferrer">
+                  <a className="text-gradient" href="https://instagram.com/hrpurnomo_" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-instagram"></i>
                   </a>
-                  <a className="text-gradient" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                  <a className="text-gradient" href="https://linkedin.com/heru-purnomo17" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-linkedin"></i>
                   </a>
-                  <a className="text-gradient" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                  <a className="text-gradient" href="https://github.com/purnomoht17" target="_blank" rel="noopener noreferrer">
                     <i className="bi bi-github"></i>
                   </a>
                 </div>
