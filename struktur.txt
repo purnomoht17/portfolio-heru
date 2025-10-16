@@ -1,10 +1,12 @@
 .
 ├── README.md
+├── env.example
 ├── eslint.config.js
 ├── index.html
 ├── package.json
 ├── pnpm-lock.yaml
 ├── public
+│   ├── Heru_Purnomo_Resume.pdf
 │   └── vite.svg
 ├── src
 │   ├── assets
@@ -12,11 +14,23 @@
 │   │   └── react.svg
 │   ├── components
 │   │   ├── Footer.jsx
+│   │   ├── GaPageTracker.jsx
 │   │   └── Navbar.jsx
+│   ├── data
+│   │   ├── projectData.js
+│   │   └── resumeData.js
 │   ├── main.jsx
 │   └── pages
-│       └── Home
+│       ├── Contact
+│       │   └── Contact.jsx
+│       ├── Home
+│       │   ├── Home.css
+│       │   └── Home.jsx
+│       ├── Projects
+│       │   └── Projects.jsx
+│       └── Resume
+│           └── Resume.jsx
 ├── struktur.txt
 └── vite.config.js
 
-7 directories, 13 files
+11 directories, 23 files
