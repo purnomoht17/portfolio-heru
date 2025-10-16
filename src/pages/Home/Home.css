@@ -11578,6 +11578,24 @@ html {
   font-size: 1.5rem;
 }
 
+.experience-logo-full {
+    /* Gambar mengisi penuh lebar container */
+    width: 100%; 
+    height: auto; 
+    
+    /* Memastikan gambar mengisi area tanpa distorsi (cocok untuk foto grup/landscape) */
+    object-fit: cover; 
+    
+    /* Kunci: Menghilangkan radius di bawah (kanan dan kiri) agar menyatu dengan konten card */
+    border-top-left-radius: var(--bs-border-radius-xl) !important; 
+    border-top-right-radius: var(--bs-border-radius-xl) !important; 
+    border-bottom-left-radius: 0 !important; 
+    border-bottom-right-radius: 0 !important; 
+    
+    /* Jika Anda ingin menghilangkan margin bawah (mb-4) di JSX dan menambahkannya di sini: */
+    margin-bottom: 1.5rem; /* Sesuaikan dengan mb-4 yang defaultnya 1.5rem */
+}
+
 .profile {
   position: relative;
   height: 75vw;

@@ -8,7 +8,8 @@ export const resumeData = {
       position: "Staff Biro Kesekretariatan",
       company: "BEM Universitas Tarumanagara",
       location: "Jakarta Barat",
-      description: "Sebagai anggota Biro Kesekretariatan, saya berperan dalam mendukung operasional administrasi BEM Universitas Tarumanagara. Saya mengelola surat-menyurat dan dokumentasi internal organisasi, membantu koordinasi rapat serta penyusunan laporan kegiatan, dan memastikan pengelolaan inventaris internal berjalan tertib dan efisien. Pengalaman ini mengasah kemampuan saya dalam manajemen waktu, komunikasi tim, dan ketelitian dalam pengelolaan dokumen organisasi."
+      description: "Sebagai anggota Biro Kesekretariatan, saya berperan dalam mendukung operasional administrasi BEM Universitas Tarumanagara. Saya mengelola surat-menyurat dan dokumentasi internal organisasi, membantu koordinasi rapat serta penyusunan laporan kegiatan, dan memastikan pengelolaan inventaris internal berjalan tertib dan efisien. Pengalaman ini mengasah kemampuan saya dalam manajemen waktu, komunikasi tim, dan ketelitian dalam pengelolaan dokumen organisasi.",
+      image: "biro-kesekretariatan.jpg"
     },
     {
       id: 2,
@@ -16,7 +17,8 @@ export const resumeData = {
       position: "Sekretaris Pelaksana Tarumanagara Job Fair 2025",
       company: "BEM Universitas Tarumanagara",
       location: "Jakarta Barat",
-      description: "Berperan dalam memastikan kelancaran pelaksanaan Tarumanagara Job Fair 2025 melalui koordinasi administratif dan dokumentasi kegiatan. Menjalin komunikasi antara panitia internal dan pihak eksternal, serta mengatur jadwal rapat dan agenda acara agar kegiatan berjalan efisien dan tepat waktu. Pengalaman ini memperkuat kemampuan saya dalam perencanaan, komunikasi lintas tim, dan pengelolaan waktu pada proyek berskala besar."
+      description: "Berperan dalam memastikan kelancaran pelaksanaan Tarumanagara Job Fair 2025 melalui koordinasi administratif dan dokumentasi kegiatan. Menjalin komunikasi antara panitia internal dan pihak eksternal, serta mengatur jadwal rapat dan agenda acara agar kegiatan berjalan efisien dan tepat waktu. Pengalaman ini memperkuat kemampuan saya dalam perencanaan, komunikasi lintas tim, dan pengelolaan waktu pada proyek berskala besar.",
+      image: "sekertaris-pelaksana.JPG"
     }
   ],
 

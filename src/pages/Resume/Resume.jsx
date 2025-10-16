@@ -1,5 +1,25 @@
+// src/pages/Resume/Resume.jsx
+
 import React from 'react';
 import { resumeData } from '../../data/resumeData.js'; // Impor data dari file terpisah
+
+// ---------------------------------------------------------------
+// 💡 SOLUSI VITE: import.meta.glob
+// Mengimpor semua aset gambar secara otomatis dan EAGER (sinkron)
+const imageModules = import.meta.glob('../../assets/*.{png,jpg,jpeg,svg,JPG}', { eager: true }); 
+
+// Fungsi untuk mendapatkan URL gambar dari nama file (misal: 'logo.png')
+const getImageUrl = (imageName) => {
+    // Bangun path relatif yang digunakan oleh glob
+    const fullPath = `../../assets/${imageName}`;
+    
+    // Cari modul yang cocok dan ambil default URL-nya
+    const module = imageModules[fullPath];
+    
+    return module ? module.default : null;
+};
+// ---------------------------------------------------------------
+
 
 function Resume() {
   return (
@@ -15,44 +35,67 @@ function Resume() {
             
             {/* Experience Section */}
             <section>
-              {/* Menggunakan flex-column (mobile) dan flex-md-row (desktop) untuk urutan: Tombol di atas Experience pada HP */}
+              {/* Tombol Download & Judul Experience */}
               <div 
                 className="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-md-between mb-4"
               >
                 
-                {/* Tombol Resume: Menggunakan href="/resume.pdf" dan atribut download */}
                 <a 
                   className="btn btn-primary px-4 py-3 mb-3 mb-md-0" 
-                  href="/Heru_Purnomo_Resume.pdf" // 💡 Targetkan file di folder public
-                  download="Heru_Purnomo_Resume.pdf" // 💡 Tambahkan atribut download agar langsung mengunduh
+                  href="/Heru_Purnomo_Resume.pdf" 
+                  download="Heru_Purnomo_Resume.pdf" 
                 >
                   <div className="d-inline-block bi bi-download me-2"></div>
                   Download Resume
                 </a>
                 
-                {/* Judul Experience */}
                 <h2 className="text-primary fw-bolder mb-0">Experience</h2>
               </div>
               
-              {resumeData.experience.map((exp) => (
-                <div key={exp.id} className="card shadow border-0 rounded-4 mb-5">
-                  <div className="card-body p-5">
-                    <div className="row align-items-center gx-5">
-                      <div className="col text-center text-lg-start mb-4 mb-lg-0">
-                        <div className="bg-light p-4 rounded-4">
-                          <div className="text-primary fw-bolder mb-2">{exp.period}</div>
-                          <div className="small fw-bolder">{exp.position}</div>
-                          <div className="small text-muted">{exp.company}</div>
-                          <div className="small text-muted">{exp.location}</div>
-                        </div>
+              {/* Mapping Data Pengalaman */}
+              {resumeData.experience.map((exp) => {
+                // Ambil URL gambar menggunakan fungsi helper
+                const imageUrl = exp.image ? getImageUrl(exp.image) : null;
+
+                return (
+                  <div key={exp.id} className="card shadow border-0 rounded-4 mb-5">
+                    <div className="card-body p-5">
+                      
+                      {/* 💡 FOTO HEADER FULL-WIDTH DI DALAM CARD-BODY */}
+                      {imageUrl && (
+                          <div className="mb-4"> 
+                              <img
+                                  src={imageUrl} 
+                                  alt={`${exp.company} logo`}
+                                  // Menggunakan kelas kustom untuk full width dan object-fit
+                                  className="img-fluid experience-logo-full" 
+                              />
+                          </div>
+                      )}
+                      
+                      {/* GRID/ROW UNTUK DETAIL POSISI DAN DESKRIPSI (Sejajar) */}
+                      <div className="row gx-5">
+                          
+                          {/* Kolom Kiri: Detail Posisi (col-lg-4) */}
+                          <div className="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+                              <div className="bg-light p-4 rounded-4">
+                                  <div className="text-primary fw-bolder mb-2">{exp.period}</div>
+                                  <div className="small fw-bolder">{exp.position}</div>
+                                  <div className="small text-muted">{exp.company}</div>
+                                  <div className="small text-muted">{exp.location}</div>
+                              </div>
+                          </div>
+                          
+                          {/* Kolom Kanan: Deskripsi (col-lg-8) */}
+                          <div className="col-lg-8">
+                              <div>{exp.description}</div>
+                          </div>
                       </div>
-                      <div className="col-lg-8">
-                        <div>{exp.description}</div>
-                      </div>
+
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
               
             </section>
 
@@ -85,7 +128,7 @@ function Resume() {
             
             <div className="pb-5"></div>
 
-            {/* Skills Section */}
+            {/* Skills Section (Kode tetap sama) */}
             <section>
               <div className="card shadow border-0 rounded-4 mb-5">
                 <div className="card-body p-5">
