@@ -11605,6 +11605,25 @@ html {
   max-height: 40rem;
   max-width: 40rem;
 }
+
+.profile-img-custom {
+  /* Atur ukuran dasar 1:1 untuk gambar */
+  width: 200px; /* Lebar default, Anda bisa menyesuaikan angkanya */
+  height: 200px; /* Tinggi yang sama dengan lebar untuk rasio 1:1 */
+  
+  /* Agar gambar mengisi area 1:1 tanpa distorsi (cropping jika perlu) */
+  object-fit: cover; 
+  
+  /* Bentuk: opsional, membuat lingkaran/kotak */
+  border-radius: 50%; /* Opsional: Membuat gambar menjadi lingkaran */
+  
+  /* Menghilangkan margin vertikal yang ditambahkan pada profile sebelumnya */
+  margin-top: 0;
+  
+  /* Responsif dasar (opsional: agar tidak terlalu besar di layar besar) */
+  max-width: 100%;
+}
+
 .profile .profile-img {
   height: 80vw;
   max-height: 45rem;
@@ -11748,5 +11767,19 @@ html {
   .profile .dots-4 {
     width: 1.5vw;
     left: -2vw;
+  }
+}
+
+@media (min-width: 576px) {
+  .profile-img-custom {
+    width: 250px; /* Ukuran yang lebih besar untuk sm */
+    height: 250px;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-img-custom {
+    width: 300px; /* Ukuran yang lebih besar untuk lg */
+    height: 300px;
   }
 }

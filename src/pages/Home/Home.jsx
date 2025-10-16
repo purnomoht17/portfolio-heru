@@ -1,9 +1,9 @@
 // src/pages/Home/Home.jsx
 
 import React from 'react';
-import { Link } from 'react-router-dom'; // 💡 Tambahkan impor Link
+import { Link } from 'react-router-dom';
 import './Home.css';
-import profileImage from '../../assets/profile.png';
+import profileImage from '../../assets/profile.jpg';
 
 function Home() {
   return (
@@ -46,10 +46,12 @@ function Home() {
             <div className="col-xxl-7">
               {/* Header profile picture */}
               <div className="d-flex justify-content-center mt-5 mt-xxl-0">
-                <div className="profile bg-gradient-primary-to-secondary">
-                  <img className="profile-img" src={profileImage} alt="Profile" />
-                  {/* ... Bagian SVG dots tetap di sini ... */}
-                </div>
+                {/* 💡 PERUBAHAN UTAMA: Hapus div class="profile" dan gunakan gambar langsung */}
+                <img 
+                  className="profile-img-custom" // 💡 Gunakan class baru untuk styling 1:1 tanpa background
+                  src={profileImage} 
+                  alt="Profile" 
+                />
               </div>
             </div>
           </div>
