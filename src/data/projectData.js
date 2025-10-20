@@ -23,12 +23,19 @@ export const projectsData = [
     filename: "project3.png",
     link: "https://github.com/purnomoht17/UAS-frontend-kelompok-8.git",
   },
-      {
+  {
     id: 4,
     title: "Frontend Development - TicTacTo Game",
     description: "Membangun permainan TicTacToe interaktif menggunakan React dan Vite untuk memahami struktur dasar proyek serta konsep state management dalam React.",
     techStack: ["React", "Vite"],
     filename: "project4.png",
     link: "https://github.com/purnomoht17/tic-tac-to.git",
+  },
+  {
+    id: 5,
+    title: "Backend Development - Basic Social Media",
+    description: "Membangun fitur dasar media sosial seperti autentikasi pengguna (login dan signup) menggunakan framework Laravel untuk memahami konsep fundamental pengembangan backend, routing, dan manajemen basis data dengan PostgreSQL.",
+    techStack: ["PHP", "Laravel", "PostgreSQL"],
+    link: "https://github.com/purnomoht17/UAS_SocialMedia_Kelompok7.git",
   },
 ];
