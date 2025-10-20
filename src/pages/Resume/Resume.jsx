@@ -10,6 +10,8 @@ const imageModules = import.meta.glob('../../assets/*.{png,jpg,jpeg,svg,JPG}', {
 
 // Fungsi untuk mendapatkan URL gambar dari nama file (misal: 'logo.png')
 const getImageUrl = (imageName) => {
+    if (!imageName) return null;
+    
     // Bangun path relatif yang digunakan oleh glob
     const fullPath = `../../assets/${imageName}`;
     
@@ -56,22 +58,33 @@ function Resume() {
               {resumeData.experience.map((exp) => {
                 // Ambil URL gambar menggunakan fungsi helper
                 const imageUrl = exp.image ? getImageUrl(exp.image) : null;
+                
+                // Menggunakan rounded-4 yang didefinisikan di :root (1rem)
+                const imageRoundedClasses = imageUrl ? `rounded-top-4` : ''; 
 
                 return (
                   <div key={exp.id} className="card shadow border-0 rounded-4 mb-5">
-                    <div className="card-body p-5">
-                      
-                      {/* 💡 FOTO HEADER FULL-WIDTH DI DALAM CARD-BODY */}
-                      {imageUrl && (
-                          <div className="mb-4"> 
-                              <img
-                                  src={imageUrl} 
-                                  alt={`${exp.company} logo`}
-                                  // Menggunakan kelas kustom untuk full width dan object-fit
-                                  className="img-fluid experience-logo-full" 
-                              />
-                          </div>
-                      )}
+                    
+                    {/* --- HEADER GAMBAR (DI ATAS CARD) --- */}
+                    {imageUrl && (
+                      // Menggunakan card-header dengan p-0 untuk menghilangkan padding
+                      // Hapus mb-4 dari div ini jika ada, card-header secara default sudah tanpa padding di p-0
+                      <div className={`card-header p-0 bg-light ${imageRoundedClasses}`}> 
+                          {/* Kontainer gambar tanpa rasio tetap, disarankan rasio 16:9 
+                              Jika rasio 16:9 diperlukan, tambahkan class ratio ratio-16x9 di sini. */}
+                          <img
+                              src={imageUrl} 
+                              alt={`${exp.company} logo`}
+                              // 💡 FIX: Tambahkan d-block untuk menghilangkan margin bawah inline image
+                              className="img-fluid experience-logo-full d-block mb-0" 
+                          />
+                      </div>
+                    )}
+                    
+                    {/* --- CARD BODY (DETAIL PENGALAMAN) --- */}
+                    {/* Hapus p-5 dari card-body, tambahkan padding di div inner jika perlu 
+                        Namun, kita pertahankan p-5 agar detail tetap memiliki padding standar. */}
+                    <div className="card-body p-4 p-md-5"> 
                       
                       {/* GRID/ROW UNTUK DETAIL POSISI DAN DESKRIPSI (Sejajar) */}
                       <div className="row gx-5">

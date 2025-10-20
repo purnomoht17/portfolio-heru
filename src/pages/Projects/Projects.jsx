@@ -2,7 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../../data/projectData.js'; 
 
+// ---------------------------------------------------------------
+// 💡 SOLUSI VITE: import.meta.glob (Untuk Mengimpor Aset Lokal)
+// Mengimpor semua aset gambar secara otomatis dan EAGER (sinkron)
+const imageModules = import.meta.glob('../../assets/*.{png,jpg,jpeg,svg,JPG}', { eager: true }); 
+
+// Fungsi untuk mendapatkan URL gambar dari nama file (misal: 'logo.png')
+const getImageUrl = (imageName) => {
+    if (!imageName) return null;
+    
+    // Bangun path relatif yang digunakan oleh glob
+    const fullPath = `../../assets/${imageName}`;
+    
+    // Cari modul yang cocok dan ambil default URL-nya
+    const module = imageModules[fullPath];
+    
+    return module ? module.default : null;
+};
+// ---------------------------------------------------------------
+
+
 function Projects() {
+  
   return (
     <main className="flex-shrink-0">
       {/* Projects Section */}
@@ -12,51 +33,77 @@ function Projects() {
             <h1 className="display-5 fw-bolder mb-0">
               <span className="text-gradient d-inline">Projects</span>
             </h1>
-            <p className="lead fw-light mb-0">Solusi backend yang handal, dari desain API hingga basis data.</p> 
+            <p className="lead fw-light mb-0">Portofolio proyek backend dan API yang saya kerjakan.</p> 
           </div>
           <div className="row gx-5 justify-content-center">
             <div className="col-lg-11 col-xl-9 col-xxl-8">
               
               {/* Mapping dari projectsData */}
-              {projectsData.map((project) => (
-                <div key={project.id} className="card shadow rounded-4 border-0 mb-5">
-                  <div className="card-body p-4 p-md-5">
-                      
-                      {/* 1. Project Title and Type */}
-                      <div className="d-flex align-items-center mb-4">
-                            <h2 className="fw-bolder mb-0">{project.title}</h2>
-                            {/* Tambahkan badge kecil untuk tipe proyek, e.g., Backend, API, Microservice */}
-                            <span className="badge bg-secondary ms-3">Backend</span> 
-                      </div>
-                      
-                      {/* 2. Tech Stack (Gunakan badge untuk tampilan yang menarik) */}
-                      <div className="mb-4">
-                          <h4 className="fw-bolder fs-5 text-primary">Tech Stack:</h4>
-                          {/* Asumsi project.techStack adalah array of strings */}
-                          {project.techStack && project.techStack.map((tech, i) => (
-                              <span key={i} className="badge bg-light text-dark fw-bolder me-2 mb-2 p-2">
-                                  {tech}
-                              </span>
-                          ))}
-                      </div>
+              {projectsData.map((project) => {
+                
+                const projectImage = getImageUrl(project.filename);
+                
+                // Kelas rounded-top-4 adalah versi Bootstrap dari rounded-xl yang Anda gunakan di :root
+                const imageRoundedClasses = projectImage 
+                    ? `rounded-top-4` // Gambar hanya membulat di bagian atas
+                    : '';
 
-                      {/* 3. Description/Problem Solved */}
-                      <div className="mb-4">
-                          <h4 className="fw-bolder fs-5 text-primary">Deskripsi:</h4>
-                          <p className="lead">{project.description}</p>
+                return (
+                  // Kartu Proyek
+                  <div key={project.id} className="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                    
+                    {/* --- HEADER GAMBAR 16:9 (DI ATAS CARD) --- */}
+                    {projectImage && (
+                      // Menggunakan div card-header untuk bagian atas kartu
+                      <div className={`card-header p-0 bg-dark ${imageRoundedClasses}`}> 
+                          {/* Pembungkus Ratio 16:9 */}
+                          <div className="ratio ratio-16x9">
+                            <img 
+                                // Gambar mengisi area 16:9
+                                className="img-fluid w-100 h-100 object-fit-cover" 
+                                src={projectImage} 
+                                alt={project.title} 
+                            />
+                          </div>
                       </div>
+                    )}
+                    
+                    {/* --- DETAIL PROYEK (BODY CARD) --- */}
+                    <div className="card-body p-4 p-md-5">
+                      
+                        {/* Judul Proyek */}
+                        <h2 className="fw-bolder mb-3">{project.title}</h2>
+                        
+                        {/* Tech Stack (Badge) */}
+                        {project.techStack && project.techStack.length > 0 && (
+                            <div className="mb-4">
+                                <h4 className="fw-bolder fs-6 text-primary">Tech Stack:</h4>
+                                <div className="d-flex flex-wrap gap-2"> 
+                                    {project.techStack.map((tech, i) => (
+                                        <span key={i} className="badge bg-light text-dark fw-bolder p-2 rounded-pill border">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
-                      {/* 4. Project Link/Button */}
-                      {project.link && (
-                          <Link className="btn btn-primary px-4 py-2" to={project.link}>
-                            <i className="bi bi-box-arrow-up-right me-2"></i> 
-                            Lihat Repositori / Demo
-                          </Link>
-                      )}
+                        {/* Deskripsi */}
+                        <p className="text-muted">{project.description}</p>
+                        
+                        {/* Link atau Tombol */}
+                        {project.link && (
+                            <Link className="btn btn-primary mt-3" to={project.link} target="_blank" rel="noopener noreferrer">
+                                <i className="bi bi-box-arrow-up-right me-2"></i> 
+                                Lihat Repositori / Demo
+                            </Link>
+                        )}
+                    </div>
+                    {/* END: DETAIL PROYEK */}
 
                   </div>
-                </div>
-              ))}
+                );
+              })}
               {/* End Mapping */}
 
             </div>
