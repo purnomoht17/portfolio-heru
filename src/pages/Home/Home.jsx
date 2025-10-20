@@ -16,7 +16,7 @@ function Home() {
               {/* Header text content */}
               <div className="text-center text-xxl-start">
                 <div className="badge bg-gradient-primary-to-secondary text-white mb-4">
-                  <div className="text-uppercase">Backend · API · Web Development</div>
+                  <div className="text-uppercase">Backend · Web Development</div>
                 </div>
                 <div className="fs-3 fw-light text-muted">Membangun sistem backend yang handal</div>
                 <h1 className="display-3 fw-bolder mb-5">

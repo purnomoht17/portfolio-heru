@@ -23,4 +23,12 @@ export const projectsData = [
     filename: "project3.png",
     link: "https://github.com/purnomoht17/UAS-frontend-kelompok-8.git",
   },
+      {
+    id: 4,
+    title: "Frontend Development - TicTacTo Game",
+    description: "Membangun permainan TicTacToe interaktif menggunakan React dan Vite untuk memahami struktur dasar proyek serta konsep state management dalam React.",
+    techStack: ["React", "Vite"],
+    filename: "project4.png",
+    link: "https://github.com/purnomoht17/tic-tac-to.git",
+  },
 ];
