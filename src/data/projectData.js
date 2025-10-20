@@ -15,4 +15,12 @@ export const projectsData = [
     filename: "project2.png",
     link: "https://github.com/purnomoht17/e-commerce-web-api.git",
   },
+    {
+    id: 3,
+    title: "Frontend Development - Web Lifestyle",
+    description: "Mendesain sebuah tampilan untuk web yang berisi konten lifestyle.",
+    techStack: ["Node.js", "Express", "PosgreSql", "HTML", "CSS"],
+    filename: "project3.png",
+    link: "https://github.com/purnomoht17/UAS-frontend-kelompok-8.git",
+  },
 ];
