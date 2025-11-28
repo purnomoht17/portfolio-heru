@@ -9,14 +9,6 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Backend Development - E-Commerce Web (Shop API)",
-    description: "Membangun sistem backend menggunakan Express.js dan MySQL dengan penerapan autentikasi JWT, sistem transaksi, dan integrasi pembayaran berbasis sandbox.",
-    techStack: ["Node.js", "Express", "MongoDB", "Prisma ORM", "Midtrans"],
-    filename: "project2.png",
-    link: "https://github.com/purnomoht17/e-commerce-web-api.git",
-  },
-    {
-    id: 3,
     title: "Frontend Development - Web Lifestyle",
     description: "Mendesain sebuah tampilan untuk web yang berisi konten lifestyle.",
     techStack: ["Node.js", "Express", "PosgreSql", "HTML", "CSS"],
@@ -24,7 +16,7 @@ export const projectsData = [
     link: "https://github.com/purnomoht17/UAS-frontend-kelompok-8.git",
   },
   {
-    id: 4,
+    id: 3,
     title: "Frontend Development - TicTacTo Game",
     description: "Membangun permainan TicTacToe interaktif menggunakan React dan Vite untuk memahami struktur dasar proyek serta konsep state management dalam React.",
     techStack: ["React", "Vite"],
@@ -32,7 +24,7 @@ export const projectsData = [
     link: "https://github.com/purnomoht17/tic-tac-to.git",
   },
   {
-    id: 5,
+    id: 4,
     title: "Backend Development - Basic Social Media",
     description: "Membangun fitur dasar media sosial seperti autentikasi pengguna (login dan signup) menggunakan framework Laravel untuk memahami konsep fundamental pengembangan backend, routing, dan manajemen basis data dengan PostgreSQL.",
     techStack: ["PHP", "Laravel", "PostgreSQL"],

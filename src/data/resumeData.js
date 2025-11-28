@@ -82,6 +82,5 @@ export const resumeData = {
     { id: 3, name: "Express.js" },
     { id: 4, name: "MySql" },
     { id: 5, name: "MongoDB" },
-    { id: 6, name: "Database Manajemen" }
   ]
 };
