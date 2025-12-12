@@ -18,11 +18,9 @@ const GaPageTracker = () => {
             page: location.pathname + location.search, 
             title: location.pathname 
         });
-        console.log(`GA4: Pageview dilacak: ${location.pathname}`);
     }
   }, [location]); 
   
-  // Komponen ini tidak me-return elemen visual, hanya untuk logika
   return null; 
 };
 
