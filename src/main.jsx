@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import ReactGA from 'react-ga4'; // 👈 Import ReactGA
+import ReactGA from 'react-ga4';
 
 import GaPageTracker from './components/GaPageTracker.jsx';
 import Navbar from './components/Navbar';
@@ -23,7 +23,6 @@ const TRACKING_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 if (TRACKING_ID) {
   ReactGA.initialize(TRACKING_ID);
-  console.log('Google Analytics 4 Inisialisasi Berhasil!');
 }
 // --------------------------------------------------------------
 
